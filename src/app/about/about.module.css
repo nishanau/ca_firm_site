@@ -1,0 +1,121 @@
+.hero {
+  background: linear-gradient(180deg, var(--panel), var(--panelAlt));
+  padding: 6rem 0;
+  border-bottom: 1px solid var(--border);
+  text-align: center;
+}
+
+.heroContent {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.heroTitle {
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(90deg, var(--brand), var(--brandAlt));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.heroSubtitle {
+  font-size: 1.5rem;
+  color: var(--muted);
+  margin-bottom: 2.5rem;
+}
+
+.aboutContent {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.aboutText {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--text);
+  margin-bottom: 3rem;
+}
+
+.missionVision {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.missionCard, .visionCard {
+  background: linear-gradient(180deg, var(--panel), var(--panelAlt));
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 2.5rem;
+}
+
+.missionCard h3, .visionCard h3 {
+  color: var(--brand);
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.missionCard p, .visionCard p {
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.historySection {
+  background: linear-gradient(180deg, var(--bg), var(--panel));
+}
+
+.historyContent {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.historyText {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--text);
+}
+
+.ctaSection {
+  background: linear-gradient(120deg, var(--panel), var(--panelAlt));
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.ctaContent {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.ctaContent h2 {
+  font-size: 2.25rem;
+  margin-bottom: 1.5rem;
+  color: var(--brand);
+}
+
+.ctaContent p {
+  font-size: 1.2rem;
+  color: var(--muted);
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 4rem 0;
+  }
+  
+  .heroTitle {
+    font-size: 2.5rem;
+  }
+  
+  .heroSubtitle {
+    font-size: 1.25rem;
+  }
+  
+  .missionVision {
+    grid-template-columns: 1fr;
+  }
+}
