@@ -1,13 +1,14 @@
 /**
  * EmailJS integration for contact form
  */
+import emailjs from '@emailjs/browser';
 import { siteSettings } from './siteSettings';
 
 // Initialize EmailJS once on the client side
 export const initEmailService = () => {
   // This function will be called on the client side
-  if (typeof window !== 'undefined' && window.emailjs) {
-    window.emailjs.init(siteSettings.contactForm.userID);
+  if (typeof window !== 'undefined') {
+    emailjs.init(siteSettings.contactForm.userID);
   }
 };
 
@@ -18,9 +19,9 @@ export const initEmailService = () => {
  */
 export const sendEmail = async (formData: Record<string, string>) => {
   // Return early if we're in a server environment
-  if (typeof window === 'undefined' || !window.emailjs) {
-    console.error('EmailJS not available');
-    return Promise.reject('EmailJS not available');
+  if (typeof window === 'undefined') {
+    console.error('EmailJS not available in server environment');
+    return Promise.reject('EmailJS not available in server environment');
   }
   
   try {
@@ -29,7 +30,7 @@ export const sendEmail = async (formData: Record<string, string>) => {
       subject: formData.subject || siteSettings.contactForm.defaultSubject
     };
     
-    return await window.emailjs.send(
+    return await emailjs.send(
       siteSettings.contactForm.emailServiceID,
       siteSettings.contactForm.templateID,
       templateParams
@@ -39,17 +40,3 @@ export const sendEmail = async (formData: Record<string, string>) => {
     return Promise.reject(error);
   }
 };
-
-// Type declaration for window.emailjs
-declare global {
-  interface Window {
-    emailjs: {
-      init: (userID: string) => void;
-      send: (
-        serviceID: string,
-        templateID: string,
-        templateParams: Record<string, unknown>
-      ) => Promise<{status: number; text: string}>;
-    };
-  }
-}

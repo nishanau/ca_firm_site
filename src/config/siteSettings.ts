@@ -184,9 +184,9 @@ export const siteSettings = {
   
   // Contact Form Settings
   contactForm: {
-    emailServiceID: "YOUR_EMAILJS_SERVICE_ID", // EmailJS service ID
-    templateID: "YOUR_EMAILJS_TEMPLATE_ID",    // EmailJS template ID
-    userID: "YOUR_EMAILJS_USER_ID",            // EmailJS user ID (public key)
+    emailServiceID: "service_y3bloai", // EmailJS service ID
+    templateID: "template_v5xssf9",    // Replace with your actual EmailJS template ID
+    userID: "eyMMSniBbvN9M2CDc",        // Replace with your actual EmailJS public key
     defaultSubject: "Inquiry from Website",
     redirectUrl: "/thank-you",                 // Redirect after form submission
     formFields: [
