@@ -37,88 +37,114 @@ export default function ContactPage() {
                 <div className={styles.infoCard}>
                   <div className={styles.iconContainer}>
                     <Image 
-                      src="/file.svg" 
+                      src="/ca_firm_site/contact/location.svg" 
                       alt="Address" 
                       width={24} 
                       height={24} 
-                      className="icon"
+                      className={styles.icon}
                     />
                   </div>
-                  <h3>Visit Us</h3>
-                  <p>{address.street}</p>
-                  <p>{address.city}, {address.country} {address.postalCode}</p>
+                  <div className={styles.infoContent}>
+                    <h3 className={styles.infoLabel}>Visit Us</h3>
+                    <p className={styles.infoValue}>{address.street}</p>
+                    <p className={styles.infoValue}>{address.city}, {address.country} {address.postalCode}</p>
+                  </div>
                 </div>
                 
                 <div className={styles.infoCard}>
                   <div className={styles.iconContainer}>
                     <Image 
-                      src="/globe.svg" 
+                      src="/ca_firm_site/contact/email.svg" 
                       alt="Email" 
                       width={24} 
                       height={24} 
-                      className="icon"
+                      className={styles.icon}
                     />
                   </div>
-                  <h3>Email Us</h3>
-                  <p>
-                    <a href={`mailto:${email}`} className="contact-link">
-                      {email}
-                    </a>
-                  </p>
+                  <div className={styles.infoContent}>
+                    <h3 className={styles.infoLabel}>Email Us</h3>
+                    <p className={styles.infoValue}>
+                      <a href={`mailto:${email}`} className={styles.contactLink}>
+                        {email}
+                      </a>
+                    </p>
+                  </div>
                 </div>
                 
                 <div className={styles.infoCard}>
                   <div className={styles.iconContainer}>
                     <Image 
-                      src="/window.svg" 
+                      src="/ca_firm_site/contact/phone.svg" 
                       alt="Phone" 
                       width={24} 
                       height={24} 
-                      className="icon"
+                      className={styles.icon}
                     />
                   </div>
-                  <h3>Call Us</h3>
-                  <p>
-                    <a href={`tel:${phone.replace(/\s/g, '')}`} className="contact-link">
-                      {phone}
-                    </a>
-                  </p>
+                  <div className={styles.infoContent}>
+                    <h3 className={styles.infoLabel}>Call Us</h3>
+                    <p className={styles.infoValue}>
+                      <a href={`tel:${phone.replace(/\s/g, '')}`} className={styles.contactLink}>
+                        {phone}
+                      </a>
+                    </p>
+                  </div>
                 </div>
               </div>
               
-              <div className="social-media">
-                <h3>Connect With Us</h3>
+              <div className={styles.socialSection}>
+                <h3 className={styles.socialHeading}>Connect With Us</h3>
                 <div className={styles.socialLinks}>
                   <a 
                     href={socialMedia.facebook} 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className={styles.socialLink}
+                    aria-label="Facebook"
                   >
-                    Facebook
+                    <Image 
+                      src="/ca_firm_site/social-media/facebook.svg" 
+                      alt="Facebook" 
+                      width={20} 
+                      height={20} 
+                      className={styles.socialIcon}
+                    />
                   </a>
                   <a 
                     href={socialMedia.twitter} 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className={styles.socialLink}
+                    aria-label="Twitter"
                   >
-                    Twitter
+                    <Image 
+                      src="/ca_firm_site/social-media/twitter.svg" 
+                      alt="Twitter" 
+                      width={20} 
+                      height={20} 
+                      className={styles.socialIcon}
+                    />
                   </a>
                   <a 
                     href={socialMedia.linkedin} 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className={styles.socialLink}
+                    aria-label="LinkedIn"
                   >
-                    LinkedIn
+                    <Image 
+                      src="/ca_firm_site/social-media/linkedin.svg" 
+                      alt="LinkedIn" 
+                      width={20} 
+                      height={20} 
+                      className={styles.socialIcon}
+                    />
                   </a>
                 </div>
               </div>
             </div>
             
             <div className="contact-form-container">
-              <h2>Send Us a Message</h2>
               <ContactForm />
             </div>
           </div>
@@ -126,9 +152,13 @@ export default function ContactPage() {
       </section>
       
       {/* Map Section */}
-      <section className="section map-section">
+      <section className="section">
         <div className="container">
-          <h2 className="map-title">Our Location</h2>
+          <h2 className={styles.sectionTitle}>Our Location</h2>
+          <p className={styles.sectionDescription}>
+            We are conveniently located in the heart of the financial district. 
+            Feel free to visit us during business hours.
+          </p>
           <div className={styles.mapContainer}>
             <GoogleMap url={googleMapsUrl} />
           </div>

@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { getFirmInfo, getContactInfo } from '@/config/settingsUtils';
-
+import Image from 'next/image';
 export default function Footer() {
   const { firmName } = getFirmInfo();
   const { email, phone, address, socialMedia } = getContactInfo();
@@ -17,18 +17,18 @@ export default function Footer() {
             <p>Providing professional accounting and financial services with integrity and excellence.</p>
             <div className="social-links">
               {socialMedia.facebook && (
-                <a href={socialMedia.facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-                  <i className="social-icon facebook">FB</i>
+                <a href={socialMedia.facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook" className='social-icon'>
+                  <Image src="/ca_firm_site/social-media/facebook.svg" alt="Facebook" width={24} height={24} />
                 </a>
               )}
               {socialMedia.twitter && (
-                <a href={socialMedia.twitter} target="_blank" rel="noopener noreferrer" aria-label="Twitter">
-                  <i className="social-icon twitter">TW</i>
+                <a href={socialMedia.twitter} target="_blank" rel="noopener noreferrer" aria-label="Twitter" className='social-icon'>
+                  <Image src="/ca_firm_site/social-media/twitter.svg" alt="Twitter" width={24} height={24} />
                 </a>
               )}
               {socialMedia.linkedin && (
-                <a href={socialMedia.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                  <i className="social-icon linkedin">LI</i>
+                <a href={socialMedia.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className='social-icon'>
+                  <Image src="/ca_firm_site/social-media/linkedin.svg" alt="LinkedIn" width={24} height={24} />
                 </a>
               )}
             </div>

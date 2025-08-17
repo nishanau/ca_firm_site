@@ -117,17 +117,18 @@
   font-size: 1rem;
   line-height: 1.6;
   color: var(--text);
+  display: flex;
+  align-items: flex-start;
 }
 
 .servicePoint::before {
   content: "✓";
   position: absolute;
   left: 0;
-  top: 0.5rem;
-  width: 8px;
-  height: 8px;
+  top: 0;
   color: var(--brand);
   font-weight: bold;
+  line-height: inherit;
 }
 
 /* Sidebar Styles */
@@ -214,5 +215,6 @@
   
   .servicePoints {
     grid-template-columns: 1fr;
+
   }
 }

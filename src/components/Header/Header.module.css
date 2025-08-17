@@ -1,0 +1,208 @@
+.header {
+  background: var(--panel);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease-in-out;
+}
+
+.headerContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+}
+
+.mainNav {
+  display: flex;
+}
+
+.navList {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 2rem;
+}
+
+.navItem {
+  position: relative;
+}
+
+.navLink {
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.5rem 0;
+  display: inline-block;
+  position: relative;
+  transition: all 0.3s;
+}
+
+.navLink:hover {
+  color: var(--brand);
+  transform: translateY(-2px);
+}
+
+.navLink:after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background-color: var(--brand);
+  transition: width 0.3s ease;
+}
+
+.navLink:hover:after {
+  width: 100%;
+}
+
+.active {
+  color: var(--brand);
+  font-weight: 600;
+}
+
+.active:after {
+  width: 100%;
+}
+
+.contactInfo {
+  margin-left: 2rem;
+}
+
+.phoneLink {
+  color: var(--brand);
+  text-decoration: none;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  background: var(--brandLight);
+  transition: all 0.3s;
+}
+
+.phoneLink:hover {
+  background: var(--brand);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.mobileMenuButton {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 4px;
+  transition: background 0.3s;
+}
+
+.mobileMenuButton:hover {
+  background: var(--brandLight);
+}
+
+.hamburger {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--text);
+  position: relative;
+  transition: all 0.3s;
+}
+
+.hamburger::before,
+.hamburger::after {
+  content: '';
+  position: absolute;
+  width: 24px;
+  height: 2px;
+  background: var(--text);
+  transition: all 0.3s;
+}
+
+.hamburger::before {
+  top: -8px;
+}
+
+.hamburger::after {
+  bottom: -8px;
+}
+
+.open {
+  background: transparent;
+}
+
+.open::before {
+  top: 0;
+  transform: rotate(45deg);
+}
+
+.open::after {
+  bottom: 0;
+  transform: rotate(-45deg);
+}
+
+@media (max-width: 768px) {
+  .mobileMenuButton {
+    display: block;
+  }
+  
+  .mainNav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--panel);
+    padding: 1rem;
+    border-top: 1px solid var(--border);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    animation: slideDown 0.3s ease-out;
+  }
+  
+  .mainNavOpen {
+    display: block;
+  }
+  
+  .navList {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .navLink {
+    display: block;
+    padding: 0.75rem;
+    border-radius: 8px;
+    transition: all 0.3s;
+  }
+  
+  .navLink:hover {
+    background: var(--brandLight);
+    transform: none;
+  }
+  
+  .active {
+    background: var(--brandLight);
+  }
+  
+  .contactInfo {
+    display: none;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

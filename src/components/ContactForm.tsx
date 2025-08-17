@@ -21,6 +21,7 @@ interface FormErrors {
   email?: string;
   subject?: string;
   message?: string;
+  phone?: string;
 }
 
 export default function ContactForm() {
@@ -48,6 +49,11 @@ export default function ContactForm() {
     } else if (!/^\S+@\S+\.\S+$/.test(formState.email)) {
       newErrors.email = 'Please enter a valid email address';
     }
+    if (!formState.phone.trim()) {
+      newErrors.phone = 'Phone number is required';
+    } else if (!/^\d+$/.test(formState.phone)) {
+      newErrors.phone = 'Please enter a valid phone number (digits only)';
+    }
     
     if (!formState.subject.trim()) {
       newErrors.subject = 'Subject is required';
@@ -56,6 +62,7 @@ export default function ContactForm() {
     if (!formState.message.trim()) {
       newErrors.message = 'Message is required';
     }
+
     
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
@@ -159,15 +166,17 @@ export default function ContactForm() {
           </div>
           
           <div className="form-group">
-            <label htmlFor="phone">Phone Number</label>
+            <label htmlFor="phone">Phone Number <span className="required">*</span></label>
             <input
               type="tel"
               id="phone"
               name="phone"
               value={formState.phone}
               onChange={handleChange}
-              placeholder="(Optional)"
+              placeholder="98XXXXXXXX"
+
             />
+            {errors.phone && <div className="error-message">{errors.phone}</div>}
           </div>
         </div>
         

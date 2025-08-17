@@ -48,7 +48,7 @@ function ServicesSidebar({ services }: { services: Service[] }) {
         
         <div className={styles.ctaBox}>
           <h4>Need Assistance?</h4>
-          <p>Contact us to discuss your specific requirements and how we can help.</p>
+          <p style={{ marginBottom: '1rem' }}>Contact us to discuss your specific requirements and how we can help.</p>
           <Link href="/contact" className="btn btn-primary">Get in Touch</Link>
         </div>
       </div>
@@ -103,7 +103,7 @@ export default function ServicesPage() {
         <div className="container">
           <div className={styles.ctaContent}>
             <h2>Tailored Solutions for Your Business</h2>
-            <p>
+            <p style={{ marginBottom: '1rem' }}>
               Every business is unique, and so are its financial needs. 
               Contact us today to discuss how we can customize our services to meet your specific requirements.
             </p>

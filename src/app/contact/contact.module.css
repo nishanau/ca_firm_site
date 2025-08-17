@@ -57,6 +57,12 @@
   background: linear-gradient(180deg, var(--panel), var(--panelAlt));
   border: 1px solid var(--border);
   border-radius: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.infoCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
 .iconContainer {
@@ -68,6 +74,13 @@
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.icon {
+  filter: brightness(1.8) contrast(0.85);
+  width: 50px;
+  height: 50px;
 }
 
 .infoContent {
@@ -78,52 +91,90 @@
   font-weight: 600;
   margin-bottom: 0.5rem;
   color: var(--text);
+  font-size: 1.2rem;
 }
 
 .infoValue {
   color: var(--muted);
   font-size: 0.95rem;
+  margin: 0.25rem 0;
 }
 
-.infoValue a {
+.contactLink {
   color: var(--brand);
   text-decoration: none;
   transition: color 0.2s;
+  font-weight: 500;
 }
 
-.infoValue a:hover {
+.contactLink:hover {
   color: var(--brandAlt);
+  text-decoration: underline;
+}
+
+.socialSection {
+  margin-top: 2.5rem;
+}
+
+.socialHeading {
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  color: var(--text);
 }
 
 .socialLinks {
   display: flex;
   gap: 1rem;
-  margin-top: 1.5rem;
+  margin-top: 1rem;
 }
 
 .socialLink {
-  background: linear-gradient(180deg, var(--panel), var(--panelAlt));
+  background: linear-gradient(180deg, var(--brandLight), var(--brand));
   border: 1px solid var(--border);
-  border-radius: 8px;
+  border-radius: 50%;
   width: 40px;
   height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.2s;
+  transition: all 0.3s ease;
+  color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .socialLink:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+  transform: translateY(-5px);
+  background: var(--brandAlt);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2);
+}
+
+.socialIcon {
+  width: 20px;
+  height: 20px;
+  filter: brightness(1.8) contrast(0.85);
 }
 
 .mapContainer {
-  margin-top: 3rem;
+  margin-top: 2rem;
   height: 400px;
   border-radius: 14px;
   overflow: hidden;
   border: 1px solid var(--border);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.sectionTitle {
+  font-size: 2rem;
+  color: var(--brand);
+  margin-bottom: 1rem;
+}
+
+.sectionDescription {
+  font-size: 1.1rem;
+  color: var(--muted);
+  max-width: 800px;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
 }
 
 @media (max-width: 768px) {
