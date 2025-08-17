@@ -1,0 +1,138 @@
+.hero {
+  background: linear-gradient(180deg, var(--panel), var(--panelAlt));
+  padding: 6rem 0;
+  border-bottom: 1px solid var(--border);
+  text-align: center;
+}
+
+.heroContent {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.heroTitle {
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(90deg, var(--brand), var(--brandAlt));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.heroSubtitle {
+  font-size: 1.5rem;
+  color: var(--muted);
+  margin-bottom: 2.5rem;
+}
+
+.contactGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+}
+
+.contactInfo {
+  padding-right: 2rem;
+}
+
+.contactIntro {
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--text);
+}
+
+.infoCards {
+  display: grid;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.infoCard {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: linear-gradient(180deg, var(--panel), var(--panelAlt));
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+
+.iconContainer {
+  background: linear-gradient(180deg, var(--brandLight), var(--brand));
+  border-radius: 10px;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.infoContent {
+  flex: 1;
+}
+
+.infoLabel {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--text);
+}
+
+.infoValue {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.infoValue a {
+  color: var(--brand);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.infoValue a:hover {
+  color: var(--brandAlt);
+}
+
+.socialLinks {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.socialLink {
+  background: linear-gradient(180deg, var(--panel), var(--panelAlt));
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.socialLink:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.mapContainer {
+  margin-top: 3rem;
+  height: 400px;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+
+@media (max-width: 768px) {
+  .contactGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .contactInfo {
+    padding-right: 0;
+    margin-bottom: 2rem;
+  }
+}
