@@ -24,17 +24,17 @@ export default function About() {
       <section className="section">
         <div className="container">
           <div className={styles.aboutContent}>
-            <h2 className="section-title">Who We Are</h2>
-            <p className={styles.aboutText}>{aboutUs}</p>
+            <h2 className={styles.sectionTitle}>Who We Are</h2>
+            <p className={styles.text}>{aboutUs}</p>
             
             <div className={styles.missionVision}>
               <div className={styles.missionCard}>
                 <h3>Our Mission</h3>
-                <p>{mission}</p>
+                <p className={styles.text}>{mission}</p>
               </div>
               <div className={styles.visionCard}>
                 <h3>Our Vision</h3>
-                <p>{vision}</p>
+                <p className={styles.text}>{vision}</p>
               </div>
             </div>
           </div>
@@ -43,10 +43,10 @@ export default function About() {
       
       {/* History Section */}
       <section className={`section ${styles.historySection}`}>
-        <div className="container">
-          <h2 className="section-title">Our Journey</h2>
+        <div className={styles.container}>
+          <h2 className={styles.sectionTitle}>Our Journey</h2>
           <div className={styles.historyContent}>
-            <p className={styles.historyText}>{history}</p>
+            <p className={styles.text}>{history}</p>
           </div>
         </div>
       </section>

@@ -37,7 +37,7 @@ export const siteSettings = {
     {
       name: "Nabin Shrestha",
       title: "Managing Partner, CA",
-      photo: "/team/nabin.jpg", // Path to photo (place in public folder)
+      photo: "/ca_firm_site/team/nabin.png", // Path to photo (place in public folder)
       qualifications: "CA from ICAI",
       experience: "5+ years",
       specialization: "Audit, Financial Advisory, Tax Planning",
